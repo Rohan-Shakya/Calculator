@@ -1,0 +1,203 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    top: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* CSS variables => colors */
+:root{
+    --neutral: hsla(0, 0%, 23%, 100%);
+    --button: hsla(0, 0%, 23%, 75%);
+    --container: hsla(0, 0%, 13%, 100%);
+    --button-background: hsla(0, 0%, 2%, 50%);
+    --button-number: hsla(0, 0%, 2%, 100%);
+    --h1-color-body: hsl(0, 0%, 100%, 75%);
+    --prev-color-body: hsl(0, 0%, 100%, 50%);
+    --current-color-body: hsl(0, 0%, 100%, 100%);
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--neutral);
+    overflow: hidden; 
+    position: relative; 
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 950px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--container);
+    overflow: hidden;
+}
+
+/* main calculator */
+.main{
+    margin-right: 300px;
+    height: 100%;
+    position: relative;
+}
+
+#history-img{
+    position: absolute;
+    top: 1%;
+    right: 20px;
+    display: none;
+}
+
+.main h1{
+    font-size: 1.5rem;
+    color: var(--h1-color-body);
+    font-weight: normal;
+    margin: 1.2rem 2rem;
+}
+
+.output{
+    width:  100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.previous-operation{
+    font-size: 1.2rem;
+    color: var(--prev-color-body);
+}
+.current-operation{
+    font-size: 2.5rem;
+    color: var(--current-color-body);
+    font-weight: 500;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.buttons{
+    width: 95%;
+    height: 67%;
+    margin: auto;
+    display: grid;
+    justify-content: flex-end;
+    grid-gap: 3px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(6fr);
+}
+
+.buttons > button{
+    font-size: 1.2rem;
+    color: var(--button);
+    border: none;
+    outline: none;
+    background-color: var( --button-background);
+    color: var(--h1-color-body);
+    
+}
+
+.buttons > .number{
+    font-weight: bold;
+    background-color: var(--button-number);
+}
+.span-two{
+    grid-column: span 2;
+}
+/* main calculator */
+
+/* History */
+
+.history{
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+.history h2{
+    display: inline-block;
+    padding: 5px;
+    font-weight: 500;
+    color: var(--current-color-body);
+    font-size: 1.2rem;
+    margin: 30px 20px;
+    border-bottom: 3px solid hsla(0, 0%, 50%, 75%);
+}
+
+.history p{
+    font-size: 1.1rem;
+    color: var(--h1-color-body);
+    margin: 10px 20px;
+}
+.history .history-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 1.2rem;
+    margin: 20px 10px;
+}
+
+.history .history-body .operation{
+    font-weight: bold;
+    color: var(--current-color-body);
+    margin: 5px 20px;
+}
+
+.clear-history{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 91%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--container);
+}
+#toggle{
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: none;
+}
+
+/* History End*/
+
+/* Hide */
+.hide{
+    display: none;
+}
+/* Hide End */
+
+
+/* Media queries upto 767px */
+@media screen and (max-width: 767px){
+    .history{
+        right: -300px;
+        background-color: var(--container);
+        transition: all 0.8s ease;
+    }
+    .main{
+        margin-right: 0;
+    }
+    .clear-history{
+        display: block;
+        
+    }
+    #history-img{
+        display: block;
+    }
+    #toggle{
+        display: block;
+    }
+}
