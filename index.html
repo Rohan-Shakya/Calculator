@@ -8,6 +8,55 @@
     <script src="js/app.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <!-- main calculator -->
+        <div class="main">
+            <img id="history" src="img/history.png" alt="history">
+            <header><h1>Standard Calculator</h1></header>
+            <div class="output">
+                <div data-previous-operation class="previous-operation"></div>
+                <div data-current-operation class="current-operation"></div>
+            </div>
+            <div class="buttons">
+                <button data-operation>%</button>
+                <button data-current-all-clear>CE</button>
+                <button data-all-clear>C</button>
+                <button data-delete><img src="img/delete.png" alt=""></button>
+                <button data-operation>1/x</button>
+                <button data-operation>x&#178;</button>
+                <button data-operation>&Sqrt;</button>
+                <button data-operation>&divide;</button>
+                <button data-number class="number">7</button>
+                <button data-number class="number">8</button>
+                <button data-number class="number">9</button>
+                <button data-operation>&times;</button>
+                <button data-number class="number">4</button>
+                <button data-number class="number">5</button>
+                <button data-number class="number">6</button>
+                <button data-operation>&minus;</button>
+                <button data-number class="number">1</button>
+                <button data-number class="number">2</button>
+                <button data-number class="number">3</button>
+                <button data-operation>&plus;</button>
+                <button data-number class="number">0</button>
+                <button data-number class="number">.</button>
+                <button data-equal class="span-two">&equals;</button>
+            </div>
+        </div>
+        <!-- main calculator end -->
+
+
+        <!-- history  -->
+        <div class="history">
+            <h2>History</h2>
+            <p class="history-header">There's no history yet</p>
+            <div class="his"></div>
+            <span id="toggle"></span>
+            <div class="clear-history">
+                <img id="trash" src="img/trash.png" alt="">
+            </div>
+        </div>
+        <!-- history end -->
+    </div>
 </body>
 </html>
